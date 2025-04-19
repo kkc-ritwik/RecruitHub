@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RecruitmentApplication<recruitment>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.ace.job.recruitment.RecruitmentApplication",
+            "projectName": "recruitment",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
