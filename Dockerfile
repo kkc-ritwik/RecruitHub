@@ -26,4 +26,4 @@ COPY --from=builder /app/target/*.jar app.jar
 
 EXPOSE ${PORT}
 
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
