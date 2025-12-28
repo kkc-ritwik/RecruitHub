@@ -33,7 +33,7 @@ public class Candidate {
 	@Column(nullable = false)
 	private String dob;
 
-	@Column(columnDefinition = "BOOLEAN", nullable = false)
+	@Column(nullable = false)
 	private boolean gender;
 
 	@Column(nullable = false)
@@ -69,7 +69,7 @@ public class Candidate {
 	@Column(name = "submit_time", nullable = false)
 	private LocalTime submitTime;
 
-	@Column(columnDefinition = "longblob")
+	@Column(columnDefinition = "BYTEA")
 	private byte[] file;
 
 	@Column(nullable = false)

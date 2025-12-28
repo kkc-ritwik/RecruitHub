@@ -25,13 +25,13 @@ public class Vacancy {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@Column(columnDefinition = "LONGTEXT", nullable = false)
+	@Column(columnDefinition = "TEXT", nullable = false)
 	private String requirement;
-	@Column(columnDefinition = "LONGTEXT", nullable = false)
+	@Column(columnDefinition = "TEXT", nullable = false)
 	private String responsibility;
-	@Column(columnDefinition = "LONGTEXT", nullable = false)
+	@Column(columnDefinition = "TEXT", nullable = false)
 	private String description;
-	@Column(columnDefinition = "LONGTEXT")
+	@Column(columnDefinition = "TEXT")
 	private String preference;
 	@Column(length = 70, nullable = false)
 	private String startWorkingDay;
