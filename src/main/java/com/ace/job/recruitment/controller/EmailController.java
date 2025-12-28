@@ -345,7 +345,7 @@ public class EmailController {
 								}
 							}
 
-							candidate.isRecall(true);
+							candidate.setRecall(true);
 							candidateService.addCandidate(candidate);
 
 						} else {
@@ -572,7 +572,7 @@ public class EmailController {
 					}
 				}
 
-				candidate.isRecall(true);
+				candidate.setRecall(true);
 				candidateService.addCandidate(candidate);
 
 			} else {
