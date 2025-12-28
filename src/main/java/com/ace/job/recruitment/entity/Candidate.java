@@ -99,7 +99,7 @@ public class Candidate {
 		return isRecall;
 	}
 
-	public void isRecall(boolean isRecall) {
+	public void setRecall(boolean isRecall) {
 		this.isRecall = isRecall;
 	}
 
