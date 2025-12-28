@@ -3,205 +3,829 @@
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Ritwik Innovations - Where Talent Meets Opportunity</title>
 <link rel="stylesheet" th:href="@{/vendors/feather/feather.css}">
-<link rel="stylesheet"
-	th:href="@{/vendors/ti-icons/css/themify-icons.css}">
+<link rel="stylesheet" th:href="@{/vendors/ti-icons/css/themify-icons.css}">
 <link rel="stylesheet" th:href="@{/vendors/css/vendor.bundle.base.css}">
-<link rel="stylesheet"
-	th:href="@{/vendors/datatables.net-bs4/dataTables.bootstrap4.css}">
-<link rel="stylesheet"
-	th:href="@{/vendors/ti-icons/css/themify-icons.css}">
-<link rel="stylesheet" type="text/css"
-	th:href="@{/js/select.dataTables.min.css}">
+<link rel="stylesheet" th:href="@{/vendors/datatables.net-bs4/dataTables.bootstrap4.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/js/select.dataTables.min.css}">
 <link rel="stylesheet" th:href="@{/css/vertical-layout-light/style.css}">
-<link rel="stylesheet" th:href="@{/css/home.css}">
-<link rel="shortcut icon" th:href="@{/images/Ace_Favicon.png}" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" type="image/svg+xml" th:href="@{/favicon.svg}">
+<link rel="shortcut icon" th:href="@{/favicon.ico}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    background: #ffffff;
+}
+
+/* Modern Navigation */
+.modern-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.modern-nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 0.7rem 1.8rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.nav-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+    color: white;
+}
+
+.nav-btn-secondary {
+    background: transparent;
+    color: #1e3a8a;
+    border: 2px solid #e0e7ff;
+}
+
+.nav-btn-secondary:hover {
+    background: #f0f5ff;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+    margin-top: 70px;
+    min-height: 90vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    animation: moveGrid 20s linear infinite;
+}
+
+@keyframes moveGrid {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
+}
+
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.8s ease;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease 0.2s both;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease 0.4s both;
+    font-weight: 400;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.cta-button {
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-primary {
+    background: white;
+    color: #667eea;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    color: #667eea;
+}
+
+.cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-secondary:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-3px);
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 5rem 2rem;
+    background: #f8fafc;
+}
+
+.stats-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* Jobs Section */
+.jobs-section {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.section-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #64748b;
+    line-height: 1.8;
+}
+
+.jobs-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.job-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    border: 2px solid #f1f5f9;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.job-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+}
+
+.job-card:hover::before {
+    transform: scaleX(1);
+}
+
+.job-header {
+    margin-bottom: 1.5rem;
+}
+
+.job-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+}
+
+.job-title:hover {
+    color: #667eea;
+}
+
+.job-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.job-badge {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-type {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.badge-urgent {
+    background: #fee2e2;
+    color: #dc2626;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.job-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.job-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.job-info-item i {
+    width: 20px;
+    color: #667eea;
+    font-size: 1.1rem;
+}
+
+.job-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 2px solid #f1f5f9;
+}
+
+.job-count {
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.job-details-btn {
+    padding: 0.7rem 1.8rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.job-details-btn:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.view-all-section {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.view-all-btn {
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.view-all-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+/* Modern Footer */
+.modern-footer {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 3rem 2rem 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-link:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: translateY(-3px);
+    color: white;
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 2rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #cbd5e1;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+    }
+
+    .nav-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hide-on-phone {
+        display: none;
+    }
+}
+</style>
 </head>
 
 <body>
-	<div class="container-scroller">
-		<!-- partial:partials/_navbar.html -->
-		<nav class="navbar col-sm-12 col-12 p-0 fixed-top d-flex "
-			th:fragment="nav">
-			<div
-				class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-				<a class="navbar-brand brand-logo mr-5" th:href="@{/}"><img
-					th:src="@{/images/ACEDataSystemFull.jpg}" alt="logo" /></a> <a
-					class="navbar-brand brand-logo-mini" th:href="@{/}"><img
-					th:src="@{/images/ACEDataSystemFull.jpg}" alt="logo" /></a>
-			</div>
-			<div
-				class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+    <!-- Modern Navigation -->
+    <nav class="modern-nav">
+        <div class="modern-nav-content">
+            <div class="logo-container">
+                <a th:href="@{/}">
+                    <img th:src="@{/images/ritwik-logo-full.svg}" alt="Ritwik Innovations">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a th:href="@{/}">
+                    <button class="nav-btn nav-btn-secondary hide-on-phone">Home</button>
+                </a>
+                <a th:href="@{/candidate/jobs}">
+                    <button class="nav-btn nav-btn-secondary">Jobs</button>
+                </a>
+                <a th:href="@{/candidate/about}">
+                    <button class="nav-btn nav-btn-primary">About</button>
+                </a>
+            </div>
+        </div>
+    </nav>
 
-				<ul class="navbar-nav navbar-nav-right">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-rocket"></i> We're Hiring Top Talent
+            </div>
+            <h1 class="hero-title">Where Innovation Meets Integrity</h1>
+            <p class="hero-subtitle">
+                Building powerful ICT solutions and delivering uninterrupted, reliable services that empower businesses to grow and thrive in a digital world. Join a legacy of trust, technology, and transformation.
+            </p>
+            <div class="hero-cta">
+                <a th:href="@{/candidate/jobs}" class="cta-button cta-primary">
+                    Explore Opportunities <i class="fas fa-arrow-right"></i>
+                </a>
+                <a th:href="@{/candidate/about}" class="cta-button cta-secondary">
+                    Learn About Us
+                </a>
+            </div>
+        </div>
+    </section>
 
-					<li class="navbar-nav mr-sm-2"><a
-						class="nav-item text-decoration-none" th:href="@{/}">
-							<button class="btn btn-light btn-sm hide-on-phone">Home</button>
-					</a> <a class="nav-item text-decoration-none"
-						th:href="@{/candidate/jobs}"><button
-								class="btn btn-light btn-sm">Jobs</button></a> <a
-						class="nav-item text-decoration-none"
-						th:href="@{/candidate/about}"><button
-								class="btn btn-light btn-sm">About</button></a></li>
-				</ul>
-			</div>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="stat-number" th:text="${vacancyList.size}">50</div>
+                <div class="stat-label">Open Positions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Team Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Countries Served</div>
+            </div>
+        </div>
+    </section>
 
-		</nav>
+    <!-- Featured Jobs Section -->
+    <section class="jobs-section">
+        <div class="section-header">
+            <div class="section-badge">
+                <i class="fas fa-star"></i> Featured Opportunities
+            </div>
+            <h2 class="section-title">Current Openings</h2>
+            <p class="section-description">
+                Discover exciting career opportunities and join our world-class team of innovators
+            </p>
+        </div>
 
+        <div class="jobs-grid">
+            <div class="job-card" th:each="vacancyItem : ${vacancyList}">
+                <div class="job-header">
+                    <a th:href="@{/candidate/vacancy-info/{id}(id = ${vacancyItem.id})}"
+                       class="job-title" th:text="${vacancyItem.position.name}">
+                        Senior Software Engineer
+                    </a>
+                    <div class="job-badges">
+                        <span class="job-badge badge-type" th:text="${vacancyItem.type}">Full-time</span>
+                        <span th:if="${vacancyItem.urgent}" class="job-badge badge-urgent">
+                            <i class="fas fa-bolt"></i> Urgent
+                        </span>
+                    </div>
+                </div>
 
+                <div class="job-info">
+                    <div class="job-info-item">
+                        <i class="fas fa-building"></i>
+                        <span th:text="${vacancyItem.department.name}">Engineering</span>
+                    </div>
+                    <div class="job-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span th:text="${vacancyItem.department.address}">San Francisco, CA</span>
+                    </div>
+                    <div class="job-info-item">
+                        <i class="fas fa-wallet"></i>
+                        <span th:text="${vacancyItem.salary}">$120,000 - $180,000</span>
+                    </div>
+                </div>
 
-		<div class="main-panel" style="width: 100%; margin-top: 3rem;">
-			<div class="content-wrapper">
-				<!--Welcome text-->
-				<div style="min-height: 55vh;" class="mb-5">
-					<img class="img-fluid col-sm-12" th:src="@{/images/ace-cp.jpg}"
-						style="max-width: 100%; height: auto; max-height: 55vh;">
-					<div class="welcome" style="margin-bottom: 5rem; margin-top: 5rem;">
-						<h1 class="d-none d-md-block">🚀 We’re Hiring!</h1>
-						<h3 class="d-md-none d-sm-block">🚀 We’re Hiring!</h3>
-						<!-- <h6 class="d-sm-none">We are hiring</h6> -->
-						<h3 class="d-none d-md-block">"RITWIK Innovations PVT LTD. — Where Innovation Meets Integrity.
-							Since 2025, we’ve been building powerful ICT solutions and delivering uninterrupted, reliable services that empower businesses to grow and thrive in a digital world.
+                <div class="job-footer">
+                    <div class="job-count">
+                        <i class="fas fa-users"></i>
+                        <span th:text="${vacancyItem.count} + ' positions'">3 positions</span>
+                    </div>
+                    <a th:href="@{/candidate/vacancy-info/{id}(id = ${vacancyItem.id})}"
+                       class="job-details-btn">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-							Join a legacy of trust, technology, and transformation."</h3>
-						<h6 class="d-md-none d-sm-block">"RITWIK Innovations PVT LTD. — Where Innovation Meets Integrity.
-							Since 2025, we’ve been building powerful ICT solutions and delivering uninterrupted, reliable services that empower businesses to grow and thrive in a digital world. "</h6>
-						<!-- <p class="d-sm-none d-xs-block">"A Trustworthy Organization delivering Comprehensive ICT Solutions and Ongoing Support Services."</p> -->
-						<p class="d-md-block">Since its inception in 2025, RITWIK Innovations PVT LTD. has been one of the most successful IT Services companies.Join a legacy of trust, technology, and transformation.</p>
-					</div>
-				</div>
+        <div class="view-all-section">
+            <a th:href="@{/candidate/jobs}" class="view-all-btn">
+                View All Positions <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
 
-				<!-- Card -->
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ritwik Innovations</h3>
+                <p style="color: #cbd5e1; line-height: 1.8;">
+                    Where Innovation Meets Integrity. Building powerful ICT solutions since 2025.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/ritwikinnovations" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://ritwikrajportfolio.netlify.app/" class="social-link" target="_blank">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/ritwikinnovations" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/ritwikinnovations" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
 
-				<div class="row">
-					<div class="col-lg-4 col-md-6 col-xs-12 bg-light"
-						th:each="vacancyItem : ${vacancyList}"
-						th:data-position-id="${vacancyItem.position?.id}">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a th:href="@{/}" class="footer-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a th:href="@{/candidate/jobs}" class="footer-link">
+                        <i class="fas fa-briefcase"></i> Careers
+                    </a>
+                    <a th:href="@{/candidate/about}" class="footer-link">
+                        <i class="fas fa-info-circle"></i> About Us
+                    </a>
+                </div>
+            </div>
 
-						<div class="card position-card rounded"
-							style="border-radius: 4px;">
-							<div class="card-header">
-								<h3>
-									<a
-										th:href="@{/candidate/vacancy-info/{id}(id = ${vacancyItem.id})}"
-										class="text-black tab-link "
-										th:text="*{vacancyItem.position.name}"></a>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="footer-links">
+                    <a href="mailto:ritwiksinghkkc@gmail.com" class="footer-link">
+                        <i class="fas fa-envelope"></i> ritwiksinghkkc@gmail.com
+                    </a>
+                    <a href="tel:+919801722265" class="footer-link">
+                        <i class="fas fa-phone"></i> +91-9801722265
+                    </a>
+                    <a href="https://ritwikrajportfolio.netlify.app/" class="footer-link" target="_blank">
+                        <i class="fas fa-globe"></i> https://ritwikrajportfolio.netlify.app/
+                    </a>
+                </div>
+            </div>
+        </div>
 
-								</h3>
-							</div>
-							<div class="card-body row">
+        <div class="footer-bottom">
+            <p>© 2025 Ritwik Innovations Private Limited. All rights reserved.</p>
+        </div>
+    </footer>
 
-								<div class="tags p-2" style="width: 175px">
-									<div>
-										<i class="ti-user text-info"></i> <span
-											th:text="*{vacancyItem.count}"
-											style="font-family: sans-serif; font-size: 15px"></span>
-									</div>
-								</div>
-								<div class="tags p-2" style="width: 175px">
-									<div>
-										<i class="ti-location-pin text-success"></i> <span
-											th:text="*{vacancyItem.department.address}"></span>
-									</div>
-								</div>
-								<div class="tags p-2 text-green" style="width: 175px">
-									<div>
-										<i class="ti-wallet text-info"></i> <span
-											th:text="*{vacancyItem.salary}"></span>
-									</div>
-								</div>
-
-							</div>
-							<div class="card-footer">
-								<div class="row">
-									<div class="col tags p-2">
-										<span class="badge rounded-pill badge-info"
-											th:text="${vacancyItem.type}"></span> <span
-											th:if="${vacancyItem.urgent}"
-											class="badge rounded-pill badge-primary text-white">Urgent</span>
-									</div>
-
-									<div class="coltags p-2 text-right">
-										<a
-											th:href="@{/candidate/vacancy-info/{id}(id = ${vacancyItem.id})}"
-											class="btn btn-secondary btn-xs">Details</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="container mt-4 mb-4">
-					<div class="row">
-						<div class="col"></div>
-						<!-- Empty container to position the button -->
-						<div class="col-5 text-center">
-							<a
-								class="btn btn-sm rounded-pill shadow text-white tab-link tab-bottom btn-detail"
-								th:href="@{/candidate/jobs}">See More</a>
-						</div>
-						<div class="col"></div>
-						<!-- Empty container to position the button -->
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-		<footer class="footer" style="color: black;">
-			<div
-				class="d-sm-flex justify-content-center justify-content-sm-between">
-				<span class=" text-center text-sm-left d-block d-sm-inline-block">
-					<span style="font-size: 1rem;"> <i
-						class="fa-solid fa-envelope"></i> careers@ritwikinno.com
-				</span> <span class="d-block d-sm-inline-block"
-					style="font-size: 1rem; position: relative; left: 1rem;"> <i
-						class="fa-solid fa-square-phone"></i> <span
-						style="font-size: .8rem;">+91-9801722265</span>
-				</span><br> © 2025 All rights reserved by <a href="ritwikinnovations.com"
-					target="_blank" style="color: #3e73b5;">RITWIK Innovations PVT LTD.</a> Ltd.
-				</span> <span
-					class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Contact-Us.<br>
-					<span style="font-size: 1rem;"> <a
-						href="https://www.facebook.com/ritwikinnovations"
-						style="color: #3e73b5;"><i
-							class="fa-brands fa-square-facebook"></i></a> <span
-						style="position: relative; left: .3rem;"><a
-							href="https://ritwikinnovations.com/" style="color: #3e73b5;"><i
-								class="fa-brands fa-chrome"></i></a></span>
-				</span>
-				</span>
-			</div>
-		</footer>
-	</div>
-	<script th:src="@{/vendors/js/vendor.bundle.base.js}"></script>
-	<!-- endinject -->
-	<!-- Plugin js for this page -->
-	<script th:src="@{/vendors/chart.js/Chart.min.js}"></script>
-	<script th:src="@{/vendors/datatables.net/jquery.dataTables.js}"></script>
-	<script
-		th:src="@{/vendors/datatables.net-bs4/dataTables.bootstrap4.js}"></script>
-	<script th:src="@{/js/dataTables.select.min.js}"></script>
-
-	<!-- End plugin js for this page -->
-	<!-- inject:js -->
-	<script th:src="@{/js/off-canvas.js}"></script>
-	<script th:src="@{/js/hoverable-collapse.js}"></script>
-	<script th:src="@{/js/template.js}"></script>
-	<script th:src="@{/js/settings.js}"></script>
-	<script th:src="@{/js/todolist.js}"></script>
-	<!-- endinject -->
-	<!-- Custom js for this page-->
-	<script th:src="@{/js/dashboard.js}"></script>
-	<script th:src="@{/js/Chart.roundedBarCharts.js}"></script>
-	<!-- End custom js for this page-->
+    <script th:src="@{/vendors/js/vendor.bundle.base.js}"></script>
+    <script th:src="@{/vendors/chart.js/Chart.min.js}"></script>
+    <script th:src="@{/vendors/datatables.net/jquery.dataTables.js}"></script>
+    <script th:src="@{/vendors/datatables.net-bs4/dataTables.bootstrap4.js}"></script>
+    <script th:src="@{/js/dataTables.select.min.js}"></script>
+    <script th:src="@{/js/off-canvas.js}"></script>
+    <script th:src="@{/js/hoverable-collapse.js}"></script>
+    <script th:src="@{/js/template.js}"></script>
+    <script th:src="@{/js/settings.js}"></script>
+    <script th:src="@{/js/todolist.js}"></script>
+    <script th:src="@{/js/dashboard.js}"></script>
+    <script th:src="@{/js/Chart.roundedBarCharts.js}"></script>
 </body>
 
 </html>

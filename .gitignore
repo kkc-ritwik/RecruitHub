@@ -28,3 +28,6 @@ Thumbs.db
 
 # Dependency directories
 build-out/
+
+# Application specific - protect local dev credentials
+application-dev.properties

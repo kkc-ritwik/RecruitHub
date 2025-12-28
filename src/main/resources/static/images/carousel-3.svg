@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#bg3)"/>
+  <text x="600" y="180" font-family="Arial, sans-serif" font-size="50" font-weight="bold"
+        fill="white" text-anchor="middle">Innovation &amp; Excellence</text>
+  <text x="600" y="240" font-family="Arial, sans-serif" font-size="28"
+        fill="#fecaca" text-anchor="middle">Where Talent Meets Opportunity</text>
+</svg>

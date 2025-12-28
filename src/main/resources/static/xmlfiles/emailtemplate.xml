@@ -31,7 +31,7 @@
             <p>Time Setting      - From {StartTime} To {EndTime}</p>
             <br>
             <p>Dear {HonourablePrefix} {CandidateName}</p>
-            <p>Welcome from RITWIK Innovations PVT LTD. We would like to invite you for an interview at {Location} to get to know you more. Appointment is on <b>[AppointmentDate]</b>, <b>[AppointmentDay]</b>, from <b>[AppointmentStartTime]</b> to <b>[AppointmentEndTime]</b>.</p>
+            <p>Welcome from Ritwik Innovations Private Limited. We would like to invite you for an interview at {Location} to get to know you more. Appointment is on <b>[AppointmentDate]</b>, <b>[AppointmentDay]</b>, from <b>[AppointmentStartTime]</b> to <b>[AppointmentEndTime]</b>.</p>
             <p>We look forward to speaking with you.</p>
             <br>
             <p>Best Regards,</p>
@@ -50,7 +50,7 @@
             <p>Time Setting      - From {StartTime} To {EndTime}</p>
             <br>
             <p>Dear {HonourablePrefix} {CandidateName}</p>
-            <p>Welcome from RITWIK Innovations PVT LTD. We would like to invite you for an interview at Zoom Meeting for interview to get to know you more. Appointment is on <b>[AppointmentDate]</b>, <b>[AppointmentDay]</b>, from <b>[AppointmentStartTime]</b> to <b>[AppointmentEndTime]</b>. Please join below the zoom link. Thanks.</p>
+            <p>Welcome from Ritwik Innovations Private Limited. We would like to invite you for an interview at Zoom Meeting for interview to get to know you more. Appointment is on <b>[AppointmentDate]</b>, <b>[AppointmentDay]</b>, from <b>[AppointmentStartTime]</b> to <b>[AppointmentEndTime]</b>. Please join below the zoom link. Thanks.</p>
             <p>Note.... We want you to be in good condition during the interview with good internet and a quiet environment.</p>
             <p>Join Zoom Meeting</p>
             <p><b>[ZoomURL]</b></p>
@@ -70,7 +70,7 @@
           <![CDATA[
           <p>Dear {HonourablePrefix} {CandidateName}</p>
           <br>
-          <p>We are pleased to inform you that you are appointed as {Position} in {Department} of RITWIK Innovations PVT LTD. Please see your entitlement information detail and brief HR rule of company in below.</p>
+          <p>We are pleased to inform you that you are appointed as {Position} in {Department} of Ritwik Innovations Private Limited. Please see your entitlement information detail and brief HR rule of company in below.</p>
           <br>
           <p><b><u>Entitlement Pay Information</u></b></p><br>
           <p>Joined Start Date		-<b>[JoinedStartDate]</b></p>
@@ -81,12 +81,12 @@
           <br>
           <p><b><u>Note for probation period</u></b></p>
           <br>
-          <p>*After probation and if you are selected, you must work minimum 2 years contract at RITWIK Innovations PVT LTD.</p>
+          <p>*After probation and if you are selected, you must work minimum 2 years contract at Ritwik Innovations Private Limited.</p>
           <p>*If you wish to resign in violation of within 2 years Agreement, you must give three months' notice and your two months’ current net salary must be refunded.</p>
           <p>*No leaves are entitled in the probation period.</p>
           <p>*Any leave must be informed in advance by phone.</p>
           <p>*You must inform us 1 month in advance to resign.</p>
-          <p>*RITWIK Innovations PVT LTD. will inform you 1 month in advance if we want to terminate.</p>
+          <p>*Ritwik Innovations Private Limited will inform you 1 month in advance if we want to terminate.</p>
           <p>*You must learn all technical knowledge required by project(.NET, Java or any other technologies)</p>
    		  <br>
    		  <p><b><u>HR Rule of Company (Brief)</u></b></p>

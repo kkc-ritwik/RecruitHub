@@ -16,7 +16,8 @@
 	<!-- inject:css -->
 	<link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
 	<!-- endinject -->
-	<link rel="shortcut icon" type="icon/image" href="https://acedatasystems.com/wp-content/themes/acedata/shared/images/fav/favicon.ico">
+	<link rel="icon" type="image/svg+xml" th:href="@{/favicon.svg}">
+	<link rel="shortcut icon" th:href="@{/favicon.ico}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
@@ -128,7 +129,7 @@
 						<div class="auth-form-light text-left py-5 px-4 px-sm-5">
 							<div class="brand-logo"
 								style="display: flex; justify-content: center; align-items: center;">
-								<img src="../../images/ACEDataSystemFull.jpg" alt="logo"
+								<img src="../../images/ritwik-logo-full.svg" alt="logo"
 									style="position: relative; margin: 0;">
 							</div>
 							<div class="error-message" th:if="${param.error}">

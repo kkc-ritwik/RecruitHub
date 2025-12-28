@@ -3,291 +3,910 @@
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>About</title>
-<!-- plugins:css -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>About Ritwik Innovations - Leading ICT Solutions Provider</title>
+
 <link rel="stylesheet" th:href="@{/vendors/feather/feather.css}">
-<link rel="stylesheet"
-	th:href="@{/vendors/ti-icons/css/themify-icons.css}">
+<link rel="stylesheet" th:href="@{/vendors/ti-icons/css/themify-icons.css}">
 <link rel="stylesheet" th:href="@{/vendors/css/vendor.bundle.base.css}">
-<!-- endinject -->
-<!-- Plugin css for this page -->
-<link rel="stylesheet"
-	th:href="@{/vendors/datatables.net-bs4/dataTables.bootstrap4.css}">
-<link rel="stylesheet"
-	th:href="@{/vendors/ti-icons/css/themify-icons.css}">
-<link rel="stylesheet" type="text/css"
-	th:href="@{/js/select.dataTables.min.css}">
-<!-- End plugin css for this page -->
-<!-- inject:css -->
+<link rel="stylesheet" th:href="@{/vendors/datatables.net-bs4/dataTables.bootstrap4.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/js/select.dataTables.min.css}">
 <link rel="stylesheet" th:href="@{/css/vertical-layout-light/style.css}">
-<!-- endinject -->
-<link rel="shortcut icon" th:href="@{/images/Ace_Favicon.png}" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" type="image/svg+xml" th:href="@{/favicon.svg}">
+<link rel="shortcut icon" th:href="@{/favicon.ico}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-.contact {
-	margin-left: 1rem;
-	margin-right: 1rem;
-	text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.about-text {
-	margin-top: 1rem;
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    background: #ffffff;
 }
 
-/*.coperation {
-            margin-top: 1rem;
-            margin-left: 30%;
-        }
+/* Modern Navigation */
+.modern-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
 
-        #flexiselDemo3 {
-            margin-top: 20px;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        .coperation-photos {
-            margin-top: 1rem;
-            width: 100%;
-        }*/
-        @media ( max-width : 576px) {
-	.hide-on-phone {
-		display: none;
-	}
+.modern-nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 0.7rem 1.8rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.nav-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+    color: white;
+}
+
+.nav-btn-secondary {
+    background: transparent;
+    color: #1e3a8a;
+    border: 2px solid #e0e7ff;
+}
+
+.nav-btn-secondary:hover {
+    background: #f0f5ff;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Hero Carousel */
+.hero-carousel {
+    margin-top: 70px;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.carousel {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.carousel-control-prev {
+    left: 2rem;
+}
+
+.carousel-control-next {
+    right: 2rem;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Company Overview Section */
+.company-overview {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.overview-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 2rem;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #64748b;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Values Section */
+.values-section {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.values-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.value-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+}
+
+.value-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.value-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.value-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+/* Mission & Vision Section */
+.mission-vision {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.mission-vision-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 4rem;
+}
+
+.mv-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.mv-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.mv-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.mv-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.mv-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+/* Services Section */
+.services-section {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.services-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid #f1f5f9;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.service-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.service-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+}
+
+.stats-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 2rem;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 600;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    text-align: center;
+    color: white;
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+}
+
+.cta-button {
+    padding: 1.2rem 3rem;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    color: #667eea;
+}
+
+/* Modern Footer */
+.modern-footer {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 3rem 2rem 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-link:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: translateY(-3px);
+    color: white;
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 2rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #cbd5e1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .hero-carousel {
+        height: 300px;
+    }
+
+    .mission-vision-container {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+    }
+
+    .nav-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .cta-title {
+        font-size: 1.8rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hide-on-phone {
+        display: none;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-control-prev {
+        left: 1rem;
+    }
+
+    .carousel-control-next {
+        right: 1rem;
+    }
 }
 </style>
 </head>
 
 <body>
-	<div class="container-scroller">
-		<!-- partial:partials/_navbar.html -->
-		<nav class="navbar col-sm-12 col-12 p-0 fixed-top d-flex "
-			th:fragment="nav">
-			<div
-				class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-				<a class="navbar-brand brand-logo mr-5" th:href="@{/}"><img
-				th:src="@{/images/ACEDataSystemFull.jpg}" alt="logo" /></a> <a
-				class="navbar-brand brand-logo-mini" th:href="@{/}"><img
-				th:src="@{/images/ACEDataSystemFull.jpg}" alt="logo" /></a>
-			</div>
-			<div
-				class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+    <!-- Modern Navigation -->
+    <nav class="modern-nav">
+        <div class="modern-nav-content">
+            <div class="logo-container">
+                <a th:href="@{/}">
+                    <img th:src="@{/images/ritwik-logo-full.svg}" alt="Ritwik Innovations">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a th:href="@{/}">
+                    <button class="nav-btn nav-btn-secondary hide-on-phone">Home</button>
+                </a>
+                <a th:href="@{/candidate/jobs}">
+                    <button class="nav-btn nav-btn-secondary">Jobs</button>
+                </a>
+                <a th:href="@{/candidate/about}">
+                    <button class="nav-btn nav-btn-primary">About</button>
+                </a>
+            </div>
+        </div>
+    </nav>
 
-				<ul class="navbar-nav navbar-nav-right">
+    <!-- Hero Carousel -->
+    <div class="hero-carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="4000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img th:src="@{/images/carousel-1.svg}" alt="Ritwik Innovations - Building Your Future">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/images/carousel-2.svg}" alt="Join Our Team">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/images/carousel-3.svg}" alt="Innovation & Excellence">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
 
-					<li class="navbar-nav mr-sm-2"><a
-						class="nav-item text-decoration-none" th:href="@{/}">
-							<button class="btn btn-light btn-sm hide-on-phone">Home</button>
-					</a> <a class="nav-item text-decoration-none"
-						th:href="@{/candidate/jobs}"><button
-								class="btn btn-light btn-sm">Jobs</button></a> <a
-						class="nav-item text-decoration-none"
-						th:href="@{/candidate/about}"><button
-								class="btn btn-light btn-sm">About</button></a></li>
-				</ul>
-			</div>
+    <!-- Company Overview Section -->
+    <section class="company-overview">
+        <div class="overview-container">
+            <div class="section-badge">
+                <i class="fas fa-building"></i> About Our Company
+            </div>
+            <h2 class="section-title">Pioneering the Future of Technology</h2>
+            <p class="section-description">
+                Ritwik Innovations Private Limited was established in 2025 with a vision to revolutionize the ICT industry through cutting-edge technology and unwavering commitment. Over the years, we have evolved into a dynamic organization with expertise spanning software development, IT infrastructure, managed services, cybersecurity, cloud solutions, and digital consulting. With a team of passionate professionals and a client-first approach, we continue to deliver smart, scalable, and secure solutions that empower businesses across industries.
+            </p>
+        </div>
+    </section>
 
-		</nav>
+    <!-- Core Values Section -->
+    <section class="values-section">
+        <div class="values-container">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i> Our Core Values
+                </div>
+                <h2 class="section-title">What Drives Us Forward</h2>
+            </div>
 
-		<div class="main-panel" style="width: 100%; margin-top: 4rem;">
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-description">
+                        We constantly push boundaries and embrace new technologies to deliver cutting-edge solutions that drive business transformation.
+                    </p>
+                </div>
 
-			<div class="content-wrapper">
-				<!-- Carousel -->
-				<div id="carouselExampleIndicators" class="carousel slide"
-					data-ride="carousel" data-interval="4000">
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img class="d-block w-100"
-								src="https://acedatasystems.com/wp-content/uploads/2017/08/05.jpg"
-								alt="First slide">
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100"
-								src="https://acedatasystems.com/wp-content/uploads/2017/08/01.jpg"
-								alt="Second slide">
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100"
-								src="https://acedatasystems.com/wp-content/uploads/2017/08/03.jpg"
-								alt="Third slide">
-						</div>
-					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators"
-						role="button" data-slide="prev"> <span
-						class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-						class="sr-only">Previous</span>
-					</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-						role="button" data-slide="next"> <span
-						class="carousel-control-next-icon" aria-hidden="true"></span> <span
-						class="sr-only">Next</span>
-					</a>
-				</div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title">Integrity</h3>
+                    <p class="value-description">
+                        Trust and transparency are at the core of everything we do. We build lasting relationships through honest and ethical practices.
+                    </p>
+                </div>
 
-				<div class="contact" style="margin-top:4rem;">
-					<h3>About Our Company</h3>
-					<div class="about-text" style="font-family: sans-serif;">
-						<h5>RITWIK Innovations PVT LTD. was established in 2025 with a vision to revolutionize the ICT industry through cutting-edge technology and unwavering commitment. Over the years, RITWIK has evolved into a dynamic organization with expertise spanning software development, IT infrastructure, managed services, cybersecurity, cloud solutions, and digital consulting. With a team of passionate professionals and a client-first approach, we continue to deliver smart, scalable, and secure solutions that empower businesses across industries.</h5>
-					</div>
-				</div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="value-title">Excellence</h3>
+                    <p class="value-description">
+                        We strive for excellence in every project, delivering solutions that exceed expectations and create measurable value.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<div class="row">
-						<div class="row">
-							<div class="col-sm-6">
-                            <div class="coperation-photos" style="margin-top: 1.5rem">
-                                <div id="flexiselDemo3" class="carousel slide" data-ride="carousel"
-                                     data-interval="2500">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <a target="_blank" href="http://www.diracetechnology.com/">
-                                                        <img class="d-block w-100"
-                                                             src="https://acedatasystems.com/wp-content/uploads/2017/07/13.jpg">
-                                                    </a>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <a target="_blank" href="http://aceplussolutions.com/">
-                                                        <img class="d-block w-100"
-                                                             src="https://acedatasystems.com/wp-content/uploads/2017/07/3.jpg">
-                                                    </a>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <a target="_blank" href="https://acejapan-ltd.com/">
-                                                        <img class="d-block w-100"
-                                                             src="https://acedatasystems.com/wp-content/uploads/2017/07/8.jpg">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <a target="_blank" href="http://gakkenace.com/">
-                                                        <img class="d-block w-100"
-                                                             src="https://acedatasystems.com/wp-content/uploads/2017/07/9.jpg">
-                                                    </a>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <a target="_blank" href="https://z.com/mm/">
-                                                        <img class="d-block w-100"
-                                                             src="https://acedatasystems.com/wp-content/uploads/2017/07/10.jpg">
-                                                    </a>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <a target="_blank" href="http://www.xan.com.mm">
-                                                        <img class="d-block w-100"
-                                                             src="https://acedatasystems.com/wp-content/uploads/2017/07/17.jpg">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Add more carousel items -->
-                                        <div class="carousel-item">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <a target="_blank" href="http://aceinspiration.com/">
-                                                        <img class="d-block w-100"
-                                                             src="https://acedatasystems.com/wp-content/uploads/2017/07/7.jpg">
-                                                    </a>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <a target="_blank" href="https://mitsuiwa-ace.com/">
-                                                        <img class="d-block w-100"
-                                                             src="https://acedatasystems.com/wp-content/uploads/2017/07/11.jpg">
-                                                    </a>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <a target="_blank" href="http://thuriyaacetechnology.com/">
-                                                        <img class="d-block w-100"
-                                                             src="https://acedatasystems.com/wp-content/uploads/2017/07/thuriya_ace-1.png">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="mission-vision-container">
+            <div class="mv-card">
+                <div class="mv-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3 class="mv-title">Our Mission</h3>
+                <p class="mv-description">
+                    To empower businesses worldwide with innovative ICT solutions that drive digital transformation, enhance operational efficiency, and create sustainable competitive advantages in an ever-evolving technological landscape.
+                </p>
+            </div>
 
+            <div class="mv-card">
+                <div class="mv-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3 class="mv-title">Our Vision</h3>
+                <p class="mv-description">
+                    To be the global leader in ICT innovation, recognized for delivering transformative solutions that shape the future of technology and create lasting impact across industries and communities worldwide.
+                </p>
+            </div>
+        </div>
+    </section>
 
-                        </div>
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="services-container">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div class="section-badge">
+                    <i class="fas fa-cogs"></i> Our Services
+                </div>
+                <h2 class="section-title">Comprehensive ICT Solutions</h2>
+                <p class="section-description">
+                    From concept to deployment, we deliver end-to-end technology solutions
+                </p>
+            </div>
 
-							<div class="col-sm-6">
-								<div class="coperation">
-									<div class="about-text" style="text-align: left;">
-										<h3>
-											<b>About Our Company Cooperation</b>
-										</h3>
-										<span style="font-family: sans-serif;">
-    <h6>RITWIK Innovations PVT LTD. was established in 2025 with a strong commitment to innovation and excellence in Information and Communication Technology. What began as a focused tech initiative has now expanded into a diversified enterprise, delivering top-tier solutions in software development, system integration, managed IT services, cybersecurity, cloud infrastructure, and digital consulting. Backed by a talented team and forward-thinking leadership, RITWIK continues to partner with organizations globally to drive transformation, efficiency, and growth.</h6>
-</span>
-										div>
-								</div>
-							</div>
-						</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Software Development</h3>
+                    <p class="service-description">
+                        Custom software solutions tailored to your business needs using cutting-edge technologies and agile methodologies.
+                    </p>
+                </div>
 
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-description">
+                        Scalable cloud infrastructure and migration services to modernize your IT landscape and reduce operational costs.
+                    </p>
+                </div>
 
-					</div>
-				</div>
-			</div>
-			<footer class="footer"
-				style="background-color: rgb(69, 69, 69); color: white;">
-				<div
-					class="d-sm-flex justify-content-center justify-content-sm-between">
-					<span class=" text-center text-sm-left d-block d-sm-inline-block">
-						<span style="font-size: 1rem;"> <i
-							class="fa-solid fa-envelope"></i> careers@ritwikinno.com
-					</span> <span class="d-block d-sm-inline-block"
-						style="font-size: 1rem; position: relative; left: 1rem;"> <i
-							class="fa-solid fa-square-phone"></i> <span
-							style="font-size: .8rem;">+91-9801722265</span>
-					</span><br> © 2025 All rights reserved by <a
-						href="careers@ritwikinno.com" target="_blank"
-						style="color: lightblue;">RITWIK Innovations PVT LTD.</a> Ltd.
-					</span> <span
-						class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Contact-Us.<br>
-						<span style="font-size: 1rem;"> <a
-							href="https://www.facebook.com/ritwikinnovations"
-							style="color: white;"><i class="fa-brands fa-square-facebook"></i></a>
-							<span style="position: relative; left: .3rem;"><a
-								href="https://ritwikinnovations.com/" style="color: white;"><i
-									class="fa-brands fa-chrome"></i></a></span>
-					</span>
-					</span>
-				</div>
-			</footer>
-		</div>
-	</div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="service-title">Cybersecurity</h3>
+                    <p class="service-description">
+                        Comprehensive security solutions to protect your data, infrastructure, and applications from evolving cyber threats.
+                    </p>
+                </div>
 
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="service-title">IT Infrastructure</h3>
+                    <p class="service-description">
+                        Robust infrastructure solutions including network design, server management, and data center optimization.
+                    </p>
+                </div>
 
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="service-title">Managed Services</h3>
+                    <p class="service-description">
+                        24/7 support and proactive monitoring to ensure your systems run smoothly and efficiently at all times.
+                    </p>
+                </div>
 
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Digital Consulting</h3>
+                    <p class="service-description">
+                        Strategic guidance to help you navigate digital transformation and maximize your technology investments.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<script th:src="@{/vendors/js/vendor.bundle.base.js}"></script>
-	<!-- endinject -->
-	<!-- Plugin js for this page -->
-	<script th:src="@{/vendors/chart.js/Chart.min.js}"></script>
-	<script th:src="@{/vendors/datatables.net/jquery.dataTables.js}"></script>
-	<script
-		th:src="@{/vendors/datatables.net-bs4/dataTables.bootstrap4.js}"></script>
-	<script th:src="@{/js/dataTables.select.min.js}"></script>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Countries Served</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+        </div>
+    </section>
 
-	<!-- End plugin js for this page -->
-	<!-- inject:js -->
-	<script th:src="@{/js/off-canvas.js}"></script>
-	<script th:src="@{/js/hoverable-collapse.js}"></script>
-	<script th:src="@{/js/template.js}"></script>
-	<script th:src="@{/js/settings.js}"></script>
-	<script th:src="@{/js/todolist.js}"></script>
-	<!-- endinject -->
-	<!-- Custom js for this page-->
-	<script th:src="@{/js/dashboard.js}"></script>
-	<script th:src="@{/js/Chart.roundedBarCharts.js}"></script>
-	<!-- End custom js for this page-->
-</body>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Join Our Journey</h2>
+            <p class="cta-description">
+                Be part of a team that's shaping the future of technology. Explore exciting career opportunities and grow with us.
+            </p>
+            <a th:href="@{/candidate/jobs}" class="cta-button">
+                View Open Positions <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
 
-</html>
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ritwik Innovations</h3>
+                <p style="color: #cbd5e1; line-height: 1.8;">
+                    Where Innovation Meets Integrity. Building powerful ICT solutions since 2025.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/ritwikinnovations" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://ritwikrajportfolio.netlify.app/" class="social-link" target="_blank">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/ritwikinnovations" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/ritwikinnovations" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
 
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a th:href="@{/}" class="footer-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a th:href="@{/candidate/jobs}" class="footer-link">
+                        <i class="fas fa-briefcase"></i> Careers
+                    </a>
+                    <a th:href="@{/candidate/about}" class="footer-link">
+                        <i class="fas fa-info-circle"></i> About Us
+                    </a>
+                </div>
+            </div>
 
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="footer-links">
+                    <a href="mailto:ritwiksinghkkc@gmail.com" class="footer-link">
+                        <i class="fas fa-envelope"></i> ritwiksinghkkc@gmail.com
+                    </a>
+                    <a href="tel:+919801722265" class="footer-link">
+                        <i class="fas fa-phone"></i> +91-9801722265
+                    </a>
+                    <a href="https://ritwikrajportfolio.netlify.app/" class="footer-link" target="_blank">
+                        <i class="fas fa-globe"></i> https://ritwikrajportfolio.netlify.app/
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Ritwik Innovations Private Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script th:src="@{/vendors/js/vendor.bundle.base.js}"></script>
+    <script th:src="@{/vendors/chart.js/Chart.min.js}"></script>
+    <script th:src="@{/vendors/datatables.net/jquery.dataTables.js}"></script>
+    <script th:src="@{/vendors/datatables.net-bs4/dataTables.bootstrap4.js}"></script>
+    <script th:src="@{/js/dataTables.select.min.js}"></script>
+    <script th:src="@{/js/off-canvas.js}"></script>
+    <script th:src="@{/js/hoverable-collapse.js}"></script>
+    <script th:src="@{/js/template.js}"></script>
+    <script th:src="@{/js/settings.js}"></script>
+    <script th:src="@{/js/todolist.js}"></script>
+    <script th:src="@{/js/dashboard.js}"></script>
+    <script th:src="@{/js/Chart.roundedBarCharts.js}"></script>
 </body>
 
 </html>
